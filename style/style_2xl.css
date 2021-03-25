@@ -1,5 +1,6 @@
 html {
-	background: #fff;
+	background: url(images/gears.png) no-repeat;
+    background-size: 100%;
 }
 
 .mapimage {
