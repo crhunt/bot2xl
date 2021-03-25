@@ -66,6 +66,7 @@
 	top: 0px;
 	right: 0px;
 	padding: 0px 0px 0px 0px;
+    margin: 0px;
 	cursor: pointer;
 	transition: 0.5s;
 	background: none;
@@ -77,10 +78,10 @@
 	font-family: "Montserrat Light";
 	writing-mode: vertical-lr;
 	text-orientation: upright;
-	/*text-align: center;
-	text-align: -moz-center;*/
+	/*text-align: center;*/
+	/*text-align: -moz-center;*/
 	/*margin: 0px auto;*/
-	padding-left: 12px;
+    margin-left: 5px;
 }
 
 .sidenav .open p:hover {
@@ -130,6 +131,7 @@
 	position: relative;
 	top: 0px;
 	left: 0px;
+    width: 50px;
 	display: inline-block;
 	margin: 0px;
 }
@@ -138,50 +140,44 @@
   position: relative;
 	top: 0px;
 	left: 0px;
+    width: 50px;
+    height: 50px;
 	color: #ccc;
 	writing-mode: vertical-lr;
 	font-size: 32px;
-	font-family: "Montserrat Light";
-	width: 40px;
-	margin: 5px 5px 5px 5px;
+	font-family: "Montserrat Light";;
+	margin: 0px;
+    background-image: url(images/playarrow.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    opacity: 0.7;
 }
 
 .chevrons-down:hover {
-	color: #f1f1f1;
-}
-
-.chevrons-down:before {
-	writing-mode: vertical-lr;
-	text-orientation: sideways-right;
-	content: ' \027E9\027E9\027E9';
-	position: relative;
-	left: 10px;
+	opacity: 1;
 }
 
 .chevrons-up {
 	position: relative;
 	top: 0px;
 	left: 0px;
+    width: 50px;
+    height: 50px;
 	color: #ccc;
 	writing-mode: vertical-lr;
 	text-orientation: upright;
 	font-size: 32px;
 	font-family: "Montserrat Light";
-	width: 40px;
-	margin: 5px 5px 5px 5px;
+	margin: 0px;
+    background-image: url(images/playarrow.png);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    opacity: 0.7;
 }
 
 
 .chevrons-up:hover {
-	color: #f1f1f1;
-}
-
-.chevrons-up:before {
-	writing-mode: vertical-lr;
-	text-orientation: sideways-right;
-	content: ' \027E8\027E8\027E8';
-	position: relative;
-	left: 10px;
+	opacity: 1;
 }
 
 /* Bottom display */
@@ -196,6 +192,13 @@
 	background-color: rgba(8, 23, 77, 0.7); /* bluer: 081a4d */
 	transition: 0.5s;
 	padding-left: 20px;
+}
+
+#bottomNavUp {
+    height: 50px;
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
 
 .bottomFrame {
@@ -241,6 +244,7 @@
 	left: 15px;*/
 	height: 50px;
 	cursor: pointer;
+    padding-left: 10px;
 }
 
 .bottomnav .open .header:hover {
