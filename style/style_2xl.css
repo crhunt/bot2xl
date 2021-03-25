@@ -1,5 +1,45 @@
-#mouth img {
+html {
+	background: #fff;
+}
 
+.mapimage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+img.bot {
+    height: 100%;
+    display: block;
+    margin: 0px; 
+    padding: 0px;
+}
+
+.mouth {
+    position: absolute;
+    display: block;
+    top: 32vh;
+    left: 38vh;
+    width: 2vh;
+    height: 2vh;
+}
+
+.mouth img {
+    border-radius: 50%;
     opacity: 0;
+    width: 5.5vh;
+    height: auto;
+}
 
+#mouth img {
+    opacity: 0;
+}
+
+.floater {
+    position: absolute;
+    top: 10vh;
+    left: 10vh;
 }

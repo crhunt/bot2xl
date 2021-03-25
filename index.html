@@ -1,12 +1,31 @@
 <html>
 
 <head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <script type="text/javascript" src="js/bot_2xl.js"></script>
+<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.rwdImageMaps.min.js"></script>
+
 <link rel="stylesheet" href="style/style_2xl.css" type="text/css">
+
 </head>
 
 <body>
 
+<div class="mapimage">
+<img src="style/images/bot_2xl.jpg" class="bot" 
+     usemap="#bobhome" border=0 alt="bobhome" />
+
+<map name="bobhome">
+
+<area shape="rect" coords="0,0,200,250" alt="Exit" 
+      href="../index.php" />
+
+</map>
+
+<div class="floater">
 <div id="tape"></div>
 <div id="audioTrack"></div>
 
@@ -21,13 +40,13 @@ Your browser does not support the audio element.
 <button type="button" onclick="playtrack('3')">Track 3</button>
 <button type="button" onclick="playtrack('4')">Track 4</button>
 </p>
+<!--div id="audioLevel"></div-->
+<canvas id="c"></canvas>
+</div>
 
-<canvas id="c" width=800px></canvas>
-<div id="audioLevel"></div>
-
-<img id="mouth" src="style/images/tiger2xl.png" />
-
-
+<div class="mouth">
+<img id="mouth" src="style/images/bot_mouth.jpg" />
+</div>
 
 </body>
 

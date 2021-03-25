@@ -37,12 +37,6 @@ function playtrack(track) {
     set_analyser();
 
     draw();
-
-    //draw(normalizeData(filterData(stream)));
-    
-
-    //drawAudio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoptalk-clip.mp3');
-    //drawAudio('localhost/bot2xl/'+url);
 }
 
 function set_analyser() {
@@ -83,9 +77,9 @@ function draw() {
     var norm_factor = 80 * audio.volume + 0.1;
     
     // Set audio level
-    var audioLevel =  document.getElementById('audioLevel');
     var norm_level = Math.max( Math.min( (max_level)/norm_factor-0.19,1.0), 0.0 );
-    audioLevel.innerHTML = norm_level;
+    //var audioLevel =  document.getElementById('audioLevel');    
+    //audioLevel.innerHTML = norm_level;
     var mouth =  document.getElementById('mouth');
     mouth.style.opacity = norm_level;
     
