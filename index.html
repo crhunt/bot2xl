@@ -7,12 +7,65 @@
 <script type="text/javascript" src="js/bot_2xl.js"></script>
 <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.rwdImageMaps.min.js"></script>
+<script type="text/javascript" src="js/slidebars.js" charset="UTF-8"></script>
 
 <link rel="stylesheet" href="style/style_2xl.css" type="text/css">
+
+<link rel="stylesheet" href="style/slidebars.css" type="text/css">
 
 </head>
 
 <body>
+
+<!-- sidebar -->
+<div id="sideNav" class="sidenav">
+    <div id="openSideNav" class="sidenav open" onclick="openSideNav()">
+      <p>ABOUT</p><div class="chevron-box"><span class="chevrons-down"></span></div>
+    </div>
+    <div class="sidenav main" id="sideNavMain">
+      <div class="closebtn"><a href="javascript:void(0)" onclick="closeSideNav()">&times;</a></div>
+      <p class="header" onclick="closeSideNav()">ABOUT &rang;&rang;&rang;</p>
+      <a href="#">Download</a>
+    </div>
+</div>
+
+<!-- bottom bar -->
+<div id="bottomNav" class="bottomnav">
+    <div id="openBottomNav" class="open">
+      <div onclick="openBottomNav()" id="bottomNavUp">
+        <div class="chevron-box"><span class="chevrons-up"></span></div>
+        <div class="header">Accessible Game Interface</div>
+      </div>
+      <div onclick="closeBottomNav()" id="bottomNavDown">
+        <div class="chevron-box"><span class="chevrons-down"></span></div>
+        <div class="header">Accessible Game Interface</div>
+      </div>
+    </div>
+    <div class="bottomnav main" id="bottomNavMain">
+
+<div id="tape"></div>
+<div id="audioTrack"></div>
+
+<!--Accessible Controls for 2xl-->
+<audio controls id="audioPlayer" 
+       src="media_2xl/fascinating_facts/1.mpga" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<p>
+<button type="button" onclick="playtrack('1')">Track 1</button>
+<button type="button" onclick="playtrack('2')">Track 2</button>
+<button type="button" onclick="playtrack('3')">Track 3</button>
+<button type="button" onclick="playtrack('4')">Track 4</button>
+</p>
+<!--div id="audioLevel"></div-->
+<!--End Accessible Controls for 2xl-->
+
+    </div>
+</div><!--end bottom bar-->
+
+<!-- bgmain sets the background-->
+<div class="bgmain" id="main" onclick="closeAllNavs()">
 
 <div class="mapimage">
 <img src="style/images/bot_2xl.jpg" class="bot" 
@@ -26,27 +79,15 @@
 </map>
 
 <div class="floater">
-<div id="tape"></div>
-<div id="audioTrack"></div>
 
-<audio controls id="audioPlayer" 
-       src="media_2xl/fascinating_facts/1.mpga" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-
-<p>
-<button type="button" onclick="playtrack('1')">Track 1</button>
-<button type="button" onclick="playtrack('2')">Track 2</button>
-<button type="button" onclick="playtrack('3')">Track 3</button>
-<button type="button" onclick="playtrack('4')">Track 4</button>
-</p>
-<!--div id="audioLevel"></div-->
 <canvas id="c"></canvas>
 </div>
 
 <div class="mouth">
 <img id="mouth" src="style/images/bot_mouth.jpg" />
 </div>
+
+</div> <!--class="bgmain" id="main"-->
 
 </body>
 
