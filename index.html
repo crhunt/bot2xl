@@ -20,11 +20,12 @@
 <!-- sidebar -->
 <div id="sideNav" class="sidenav">
     <div id="openSideNav" class="sidenav open" onclick="openSideNav()">
-      <p>ABOUT</p><div class="chevron-box"><span class="chevrons-down"></span></div>
+      <p>ABOUT</p><div class="chevron-box"><span class="chevrons-left"></span></div>
     </div>
     <div class="sidenav main" id="sideNavMain">
       <div class="closebtn"><a href="javascript:void(0)" onclick="closeSideNav()">&times;</a></div>
-      <p class="header" onclick="closeSideNav()">ABOUT</p>
+      <div class="header" onclick="closeSideNav()">ABOUT
+        <div class="chevron-box"><span class="chevrons-right"></span></div></div>
       <a href="#">Download</a>
     </div>
 </div>
@@ -34,11 +35,11 @@
     <div id="openBottomNav" class="open">
       <div onclick="openBottomNav()" id="bottomNavUp">
         <div class="chevron-box"><span class="chevrons-up"></span></div>
-        <div class="header">Accessible Game Interface</div>
+        <div class="header">Details</div>
       </div>
       <div onclick="closeBottomNav()" id="bottomNavDown">
         <div class="chevron-box"><span class="chevrons-down"></span></div>
-        <div class="header">Accessible Game Interface</div>
+        <div class="header">Details</div>
       </div>
     </div>
     <div class="bottomnav main" id="bottomNavMain">

@@ -129,7 +129,7 @@
 
 .sidenav .chevron-box {
 	position: relative;
-	top: 0px;
+	bottom: 0px;
 	left: 0px;
     width: 50px;
 	display: inline-block;
@@ -137,17 +137,17 @@
 }
 
 .chevrons-down {
-  position: relative;
+	position: relative;
 	top: 0px;
 	left: 0px;
-    width: 50px;
-    height: 50px;
+	width: 50px;
+	height: 50px;
 	color: #ccc;
 	writing-mode: vertical-lr;
 	font-size: 32px;
 	font-family: "Montserrat Light";;
 	margin: 0px;
-    background-image: url(images/playarrow.png);
+	background-image: url(images/arrow_down.png);
     background-repeat: no-repeat;
     background-size: 50px;
     opacity: 0.7;
@@ -169,7 +169,7 @@
 	font-size: 32px;
 	font-family: "Montserrat Light";
 	margin: 0px;
-    background-image: url(images/playarrow.png);
+    background-image: url(images/arrow_up.png);
     background-repeat: no-repeat;
     background-size: 50px;
     opacity: 0.7;
@@ -177,6 +177,48 @@
 
 
 .chevrons-up:hover {
+	opacity: 1;
+}
+
+.chevrons-left {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 50px;
+	height: 50px;
+	color: #ccc;
+	writing-mode: vertical-lr;
+	font-size: 32px;
+	font-family: "Montserrat Light";;
+	margin: 0px;
+	background-image: url(images/arrow_left.png);
+	background-repeat: no-repeat;
+	background-size: 50px;
+}
+
+
+.chevrons-left:hover {
+	opacity: 1;
+}
+
+.chevrons-right {
+	position: relative;
+	top: 15px;
+	left: 0px;
+	width: 50px;
+	height: 50px;
+	color: #ccc;
+	writing-mode: vertical-lr;
+	font-size: 32px;
+	font-family: "Montserrat Light";;
+	margin: 0px;
+	background-image: url(images/arrow_right.png);
+	background-repeat: no-repeat;
+	background-size: 50px;
+}
+
+
+.chevrons-right:hover {
 	opacity: 1;
 }
 
@@ -189,7 +231,7 @@
 	z-index: 1;
 	bottom: 0;
 	right: 0;
-	background-color: rgba(8, 23, 77, 0.7); /* bluer: 081a4d */
+	background-color: rgba(80,148,233, 0.8); /* 84,153,254 */
 	transition: 0.5s;
 	padding-left: 20px;
 }
@@ -203,7 +245,7 @@
 
 .bottomFrame {
 	background-color: white; /* bluer: 081a4d */
-	background: rgba(8, 23, 77, 0.0); /* bluer: 081a4d */
+	background: rgba(80,148,233, 0.0); /* bluer: 081a4d */
 }
 
 .bottomnav a {
@@ -235,10 +277,11 @@
 
 .bottomnav .open .header {
 	color: #ccc;
-	font-size: 20px;
+	font-size: 32px;
 	font-family: "Montserrat";
 	display: table-cell;
 	vertical-align: middle;
+	letter-spacing: 3px;
 	/*position: relative;
 	top: 10px;
 	left: 15px;*/
@@ -249,19 +292,6 @@
 
 .bottomnav .open .header:hover {
 	color: #f1f1f1;
-}
-
-#bottomNavDown {
-	display: none;
-	height: 100%;
-	width: 100%;
-	cursor: pointer;
-}
-
-#bottomNavUp {
-	height: 100%;
-	width: 100%;
-	cursor: pointer;
 }
 
 .bottomnav .main {
