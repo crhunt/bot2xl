@@ -15,9 +15,9 @@ function closeSideNav() {
 
 function openBottomNav() {
   closeSideNav();
-  document.getElementById("bottomNav").style.height = "500px";
-  document.getElementById("bottomNavMain").style.height = "450px";
-  document.getElementById("main").style.marginBottom = "500px";
+  document.getElementById("bottomNav").style.height = "60vh";
+  document.getElementById("bottomNavMain").style.height = "50vh";
+  document.getElementById("main").style.marginBottom = "60vh";
   document.getElementById("bottomNavUp").style.display = "none";
   document.getElementById("bottomNavDown").style.display = "table";
   //document.getElementById("bottomFrame").contentDocument.location.reload(true);

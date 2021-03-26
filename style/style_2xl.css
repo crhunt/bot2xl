@@ -46,3 +46,21 @@ img.bot {
     top: 10vh;
     left: 10vh;
 }
+
+.audiobox {
+    display: block;
+    margin: auto;
+    height: 20vh;
+    width: 80%;
+    max-height: 250px;
+    max-width: 500px;
+    background: rgba(1, 51, 112, 0.8)
+}
+
+#audioplayer {
+    display: block;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
