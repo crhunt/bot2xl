@@ -1,5 +1,20 @@
 /*Colors: red (b41e40, 180,30,64), blue (5094e9, 80,148,233), yellow (fdbe11, 253, 190, 17)*/
 
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url(../style/fonts/Montserrat/Montserrat-Light.ttf)  format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url(../style/fonts/Montserrat/Montserrat-Regular.ttf)  format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Montserrat Bold';
+    src: url(../style/fonts/Montserrat/Montserrat-SemiBold.ttf)  format('truetype');
+  }
+
 html {
 	background: url(images/gears.png) no-repeat;
     background-size: 100%;
@@ -63,4 +78,67 @@ img.bot {
     bottom: 0px;
     left: 0px;
     width: 100%;
+}
+
+.buttonbox {
+    display: block;
+    margin: 5vh auto;
+    height: 20vh;
+    width: 90vw;
+}
+
+.ticklebutton {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0vh 0vw 0vh 1vw;
+    height: 20vh;
+    width: 20vw;
+    min-width: 110px;
+    background: rgba(1, 51, 112, 0.8);
+    text-align: center;
+    font-size: 18px;
+    font-family: "Montserrat Bold";
+    box-shadow: 0 0 10px -3px rgba(0,0,0,0.2);
+}
+
+.ticklebutton:active {
+    box-shadow: 0 0 10px -3px rgba(0,0,0,0.6);
+}
+
+.buttonlabel {
+    float: left;
+    width: 100%;
+    height: 3.5vh;
+    margin: 0vh auto;
+    padding: 2vh 0vw 0.5vh 0vw;
+    /*background:rgba(73, 112, 1, 0.8)*/
+}
+
+.abc {
+    color: fdbe11;
+}
+
+.yesno {
+    color: #fff;
+}
+
+.onetwo {
+    color: #fff;
+    float: left;
+    width: 100%;
+    height: 6vh;
+    margin: 0vh auto;
+    padding: 1vh 0vw 1vh 0vw;
+}
+
+.circle {
+    display: inline-block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 5.5vh;
+    height: 5.5vh;
+    line-height: 5.5vh;
+    margin: auto;
+    background: #b41e40;
 }
