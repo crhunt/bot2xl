@@ -76,6 +76,7 @@ html {
     background: rgba(0, 0, 0, 0.3);
     transition: ease-in transform 0.2s;
     transform: scale(0);
+    overflow: hidden;
 }
 
 .closeX {
@@ -109,6 +110,7 @@ html {
 
 .tapecontainer {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     position: relative;
     top: 8vh;
@@ -116,18 +118,46 @@ html {
     width: 72vw;
     min-width: 250px;
     height: 68vh;
-    background-color: rgba(129, 27, 27, 0.6);
+    min-height: 170px;
+    background-color: none;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.tapecontainer::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
-.tapebox {
-    display: inline-block;
-    width: 200px;
-    height: 100px;
+.tapebox-outer {
+    display: block;
+    width: 220px;
+    height: 120px;
     font-size: 24px;
     line-height: 100px;
     text-align: center;
-    margin: 0px, 5x, 10px, 5px;
-    background-color: rgba(129, 27, 27, 0.6);
+}
+
+.tapebox-inner {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin: 10px 10px 10px 10px;
+    font-size: 24px;
+    line-height: 100px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: rgba(180,30,64, 0);
+    cursor: pointer;
+}
+
+.tapebox-inner img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.tapebox-inner:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(180,30,64, 1);
 }
 
 /* Robot */
