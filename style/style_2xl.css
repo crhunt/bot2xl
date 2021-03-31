@@ -27,6 +27,7 @@ html {
     height: 100vh;
     margin: 0px;
     padding: 0px;
+    z-index: -1;
 }
 
 /* Clickable areas */
@@ -46,7 +47,7 @@ html {
 }
 
 .tapedeck:hover {
-    background: rgba(192, 38, 38, 0.5);
+    background: rgba(253, 190, 17, 0.5);
     color: #fff;
 }
 
@@ -56,6 +57,50 @@ html {
     left: 10vh;
 }
 
+/* Pop up tape selector */
+
+.centerpopup {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    width: 80vw;
+    height: 80vh;
+    line-height: 30vh;
+    font-family: "Montserrat Bold";
+    font-size: 5vw;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    transition: ease-in transform 0.5s;
+    transform: scale(0);
+}
+
+.closeX {
+	float: right;
+    width: 5.2vh;
+    height: 5.2vh;
+    margin: 2vh 2vh 0vh 0vh;
+    padding: 0;
+	text-align: center;
+	font-size: 5vh;
+    line-height: 5vh;
+    font-family: "Montserrat Light";
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+}
+
+.closeX a {
+	text-align: center;
+	font-size: 5vh;
+}
+
+.closeX:before {
+    content: "\2715";
+}
+
+.closeX:hover {
+    color: rgba(255,255,255,1);
+}
+
 /* Robot */
 
 img.bot {
@@ -63,6 +108,7 @@ img.bot {
     display: block;
     margin: 0px; 
     padding: 0px;
+    z-index: -1;
 }
 
 .mouth {
