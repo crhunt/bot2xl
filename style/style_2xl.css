@@ -130,33 +130,46 @@ html {
 
 .tapebox-outer {
     display: block;
-    width: 220px;
-    height: 120px;
-    font-size: 24px;
-    line-height: 100px;
+    width: 266px;
+    height: 145px;
     text-align: center;
+    background-size: 256px;
+    background-position: center;
+    background-color:rgba(253, 190, 17, 0.5);
 }
 
 .tapebox-inner {
     display: inline-block;
-    width: 200px;
-    height: 100px;
-    margin: 10px 10px 10px 10px;
-    font-size: 24px;
-    line-height: 100px;
+    position: relative;
+    top: 0px;
+    left: -5px;
+    width: 256px;
+    height: 135px;
+    margin: 0;
+    /*padding: 0px auto;*/
+    font-size: 22px;
+    line-height: 1.2em;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.6);
+    align-items: center;
+    justify-content: center;
     color: rgba(180,30,64, 0);
     cursor: pointer;
 }
 
-.tapebox-inner img {
-    width: 100%;
-    overflow: hidden;
+.tapebox-inner p {
+    margin: 0;
+    width: inherit;
+    /*padding: 2px 2px 2px 2px;*/
+    position: absolute;
+    font-size: 22px;
+    line-height: 1.2em;
+    top: 50%;
+    transform: translate(0,-50%);
+    text-align: center;
 }
 
 .tapebox-inner:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.6);
     color: rgba(180,30,64, 1);
 }
 
@@ -234,6 +247,11 @@ img.bot {
 
 .ticklebutton:active {
     box-shadow: 0 0 10px -3px rgba(0,0,0,0.6);
+}
+
+.ticklebutton:hover {
+    box-shadow: 0 0 10px -3px rgba(0,0,0,0.6);
+    background: rgba(1, 51, 112, 0.6);
 }
 
 .buttonlabel {

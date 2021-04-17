@@ -9,7 +9,12 @@ window.onload = function() {
     // Set tape
     var tape = document.getElementById('tape');
     tape.value = loadtape;
-    tape.innerHTML = toUpper(loadtape.replace("_"," "));
+    //tape.innerHTML = toUpper(loadtape.replace(/_/g," "));
+    tape.innerHTML = loadtape.replace(/_/g," ")
+                             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+
+    // Display tape collection
+    display_tapes();
     
     // Set track
     var currentTrack =  document.getElementById('audioTrack');
@@ -23,18 +28,6 @@ window.onload = function() {
     draw();
 
 }
-
-function toUpper(str) {
-    return str
-        .toLowerCase()
-        .split(' ')
-        .map(function(word) {
-            console.log("First capital letter: "+word[0]);
-            console.log("remain letters: "+ word.substr(1));
-            return word[0].toUpperCase() + word.substr(1);
-        })
-        .join(' ');
- }
 
 function playtrack(track) {
     // Update audio track
@@ -106,3 +99,64 @@ function draw() {
 
     requestAnimationFrame(draw);
 }
+
+// Display and set tape
+
+function display_tapes() {
+    
+    // List of all tapes (these are folders in /media_2xl folder)
+    var tape_list = ["african_safari", "planet_earth",
+        "all_time_top_topics", "ripleys_believe_it_or_not",
+        "amazing_world_records", "safety_first",
+        "batman_carnival_crime", "say_hello_to_famous_folks",
+        "batman_sizzling_scheme", "sng_blinded_by_the_light",
+        "careers_and_you", "spiderman_for_king_and_country",
+        "chaos_in_jurassic_park", "sports_world",
+        "count_on_it", "   stars_and_planets",
+        "fascinating_facts", "storymaker",
+        "food_facts_and_you", "superman_a_new_hero",
+        "fun_and_games", "superman_mayhem_in_metropolis",
+        "fun_with_words", "surprise_package",
+        "geography_and_you", "tale_of_the_phantom_manor",
+        "incredible_sports_feats", "tftck_if_wishes_were_hornets",
+        "jurassic_facts", "treasure_chest_of_facts",
+        "letter_perfect", "trivia_time",
+        "mmpr_attack_100_foot_teenagers", "voyage_to_outer_space",
+        "monsters_myths_and_dinosaurs", "world_of_2xl",
+        "music_maker", "world_of_animals",
+        "nature_and_you", "world_of_science",
+        "oceans_of_fun", "xmen_deadly_games",
+        "pet_parade", "xmen_ghosts_that_haunt_us"];
+
+    // Display tape selection in tapecontainer element
+    var tape_container = document.getElementById('tapecontainer');
+    // Create list of tapes
+    for (n = 0, len = tape_list.length, innerHTMLstr="", tape_name=""; n < len; n++) {
+        tape_name = tape_list[n].replace(/_/g," ")
+                                .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+        //tape_name = toUpper(tape_name);
+        innerHTMLstr += '<div class="tapebox-outer" id="'+tape_list[n]+'" >' +
+                        '<div class="tapebox-inner">'+
+                        '<p>'+tape_name+'</p></div></div>';
+    }
+    // Populate innerhtml
+    tape_container.innerHTML = innerHTMLstr;
+
+    for (n = 0, len = tape_list.length; n < len; n++) {
+        elem = document.getElementById(tape_list[n]);
+        elem.style.background = "url('media_2xl/"+tape_list[n]+"/cover.png') no-repeat";
+    }
+    
+}
+
+function toUpper(str) {
+    return str
+        .toLowerCase()
+        .split(' ')
+        .map(function(word) {
+            //console.log("First capital letter: "+word[0]);
+            //console.log("remain letters: "+ word.substr(1));
+            return word[0].toUpperCase() + word.substr(1);
+        })
+        .join(' ');
+ }
