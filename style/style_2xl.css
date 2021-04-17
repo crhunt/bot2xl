@@ -113,7 +113,7 @@ html {
     flex-flow: row wrap;
     justify-content: space-evenly;
     position: relative;
-    top: 8vh;
+    top: 4vh;
     left: 4vw;
     width: 72vw;
     min-width: 250px;
@@ -147,7 +147,7 @@ html {
     height: 135px;
     margin: 0;
     /*padding: 0px auto;*/
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.2em;
     text-align: center;
     align-items: center;
@@ -158,11 +158,12 @@ html {
 
 .tapebox-inner p {
     margin: 0;
-    width: inherit;
+    width: 246px;
     /*padding: 2px 2px 2px 2px;*/
     position: absolute;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.2em;
+    padding: 5px;
     top: 50%;
     transform: translate(0,-50%);
     text-align: center;
