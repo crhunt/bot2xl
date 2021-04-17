@@ -3,23 +3,13 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 window.onload = function() {
 
     // Initialize tape and track
-    var loadtrack = '1';
     var loadtape = 'fascinating_facts';
-
-    // Set tape
-    var tape = document.getElementById('tape');
-    tape.value = loadtape;
-    //tape.innerHTML = toUpper(loadtape.replace(/_/g," "));
-    tape.innerHTML = loadtape.replace(/_/g," ")
-                             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
 
     // Display tape collection
     display_tapes();
-    
-    // Set track
-    var currentTrack =  document.getElementById('audioTrack');
-    currentTrack.value = loadtrack;
-    currentTrack.innerHTML = "Track "+loadtrack;
+
+    // Initialize tape to play
+    set_tape(loadtape);
 
     // Initialize audio context
     window.context = new AudioContext();
@@ -27,6 +17,33 @@ window.onload = function() {
     window.ctx = document.getElementById('c').getContext("2d");
     draw();
 
+}
+
+function set_tape(loadtape) {
+    // Set tape
+    var tape = document.getElementById('tape');
+    tape.value = loadtape;
+    //tape.innerHTML = toUpper(loadtape.replace(/_/g," "));
+    tape.innerHTML = loadtape.replace(/_/g," ")
+                             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    
+    // Set track
+    var loadtrack = '1';
+    var currentTrack =  document.getElementById('audioTrack');
+    currentTrack.value = loadtrack;
+    currentTrack.innerHTML = "Track "+loadtrack;
+
+    // Set the audio to play from beginning
+    var audio = document.getElementById('audioPlayer');
+    audio.currentTime = 0;
+    
+    // Highlight tape cover in tape display
+    tape_cover = document.getElementById(loadtape);
+    tape_cover.style.border = "4px solid rgba(255,255,255,0.8)";
+
+    // Add tape name to bottom display
+    document.getElementById('bottom-header-down').innerHTML = tape.innerHTML;
+    document.getElementById('bottom-header-up').innerHTML = tape.innerHTML;
 }
 
 function playtrack(track) {
@@ -136,7 +153,7 @@ function display_tapes() {
                                 .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         //tape_name = toUpper(tape_name);
         innerHTMLstr += '<div class="tapebox-outer" id="'+tape_list[n]+'" >' +
-                        '<div class="tapebox-inner">'+
+                        '<div class="tapebox-inner" id="'+tape_list[n]+'_overlay">'+
                         '<p>'+tape_name+'</p></div></div>';
     }
     // Populate innerhtml
@@ -144,7 +161,7 @@ function display_tapes() {
 
     for (n = 0, len = tape_list.length; n < len; n++) {
         elem = document.getElementById(tape_list[n]);
-        elem.style.background = "url('media_2xl/"+tape_list[n]+"/cover.png') no-repeat";
+        elem.style.background = "url('media_2xl/"+tape_list[n]+"/cover.png') no-repeat center";
     }
     
 }

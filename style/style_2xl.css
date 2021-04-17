@@ -3,17 +3,17 @@
 @font-face {
     font-family: 'Montserrat Light';
     src: url(../style/fonts/Montserrat/Montserrat-Light.ttf)  format('truetype');
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: 'Montserrat';
     src: url(../style/fonts/Montserrat/Montserrat-Regular.ttf)  format('truetype');
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: 'Montserrat Bold';
     src: url(../style/fonts/Montserrat/Montserrat-SemiBold.ttf)  format('truetype');
-  }
+}
 
 html {
 	background: url(images/gears.png) no-repeat;
@@ -113,7 +113,7 @@ html {
     flex-flow: row wrap;
     justify-content: space-evenly;
     position: relative;
-    top: 4vh;
+    top: 8vh;
     left: 4vw;
     width: 72vw;
     min-width: 250px;
@@ -141,8 +141,8 @@ html {
 .tapebox-inner {
     display: inline-block;
     position: relative;
-    top: 0px;
-    left: -5px;
+    top: 5px;
+    left: 0px;
     width: 256px;
     height: 135px;
     margin: 0;
