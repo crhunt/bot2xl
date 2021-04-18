@@ -161,7 +161,7 @@ function display_tapes() {
     var tape_list = ["african_safari", "planet_earth",
         "all_time_top_topics", "ripleys_believe_it_or_not",
         "amazing_world_records", "safety_first",
-        "batman_carnival_crime", "say_hello_to_famous_folks",
+        "batman_carnival_of_crime", "say_hello_to_famous_folks",
         "batman_sizzling_scheme", "SNG_blinded_by_the_light",
         "careers_and_you", "spiderman_for_king_and_country",
         "chaos_in_jurassic_park", "sports_world",
