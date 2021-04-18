@@ -24,8 +24,7 @@ function set_tape(tapename) {
     // Set tape
     var tape = document.getElementById('tape');
     tape.value = tapename;
-    tape.innerHTML = tapename.replace(/_/g," ")
-                             .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+    tape.innerHTML = document.getElementById(tapename).getAttribute("value");
     
     // Set track
     var loadtrack = '1';
@@ -163,7 +162,7 @@ function display_tapes() {
         "all_time_top_topics", "ripleys_believe_it_or_not",
         "amazing_world_records", "safety_first",
         "batman_carnival_crime", "say_hello_to_famous_folks",
-        "batman_sizzling_scheme", "sng_blinded_by_the_light",
+        "batman_sizzling_scheme", "SNG_blinded_by_the_light",
         "careers_and_you", "spiderman_for_king_and_country",
         "chaos_in_jurassic_park", "sports_world",
         "count_on_it", "   stars_and_planets",
@@ -172,10 +171,10 @@ function display_tapes() {
         "fun_and_games", "superman_mayhem_in_metropolis",
         "fun_with_words", "surprise_package",
         "geography_and_you", "tale_of_the_phantom_manor",
-        "incredible_sports_feats", "tftck_if_wishes_were_hornets",
+        "incredible_sports_feats", "TFTCK_if_wishes_were_hornets",
         "jurassic_facts", "treasure_chest_of_facts",
         "letter_perfect", "trivia_time",
-        "mmpr_attack_100_foot_teenagers", "voyage_to_outer_space",
+        "MMPR_attack_100_foot_teenagers", "voyage_to_outer_space",
         "monsters_myths_and_dinosaurs", "world_of_2xl",
         "music_maker", "world_of_animals",
         "nature_and_you", "world_of_science",
@@ -187,9 +186,16 @@ function display_tapes() {
     // Create list of tapes
     for (n = 0, len = tape_list.length, innerHTMLstr="", tape_name=""; n < len; n++) {
         tape_name = tape_list[n].replace(/_/g," ")
-                                .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+                                .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
+                                .replace(/2xl/g,"2-XL").replace(/xmen/g,"X-Men")
+                                .replace(/\sOr\s/g," or ").replace(/\sAnd\s/g," and ")
+                                .replace(/\sTo\s/g," to ").replace(/\sOf\s/g," of ")
+                                .replace(/\sBy\s/g," by ").replace(/\sFor\s/g," for ")
+                                .replace(/\sIn\s/g," in ").replace(/\sWith\s/g," with ")
+                                .replace(/\sThe\s/g," the ").replace(/\sA\s/g," a ");
         //tape_name = toUpper(tape_name);
-        innerHTMLstr += '<div class="tapebox-outer" id="'+tape_list[n]+'" >' +
+        innerHTMLstr += '<div class="tapebox-outer" id="'+tape_list[n]+'" '+
+                             'value="'+tape_name+'">' +
                         '<div class="tapebox-inner" id="'+tape_list[n]+'_overlay" ' +
                              'onclick="load_tape(\''+tape_list[n]+'\')">'+
                         '<p>'+tape_name+'</p></div></div>';
