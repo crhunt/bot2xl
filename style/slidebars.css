@@ -46,15 +46,20 @@
 .sidenav .closebtn {
 	width: inherit;
 	position: absolute;
-	top: 15px;
-	right: 0px;
+	top: 30px;
+	right: 10px;
 	text-align: right;
 	font-size: 46px;
 }
 
 .sidenav .closebtn a {
 	text-align: right;
-	font-size: 46px;;
+	font-size: 46px;
+}
+
+
+.closebtn:before {
+    content: "\2715";
 }
 
 .sidenav .open {
@@ -106,7 +111,11 @@
 }
 
 .sidenav .main .header {
+	display: flex;
+	justify-content: left;
+	align-items: center;
 	width: inherit;
+	height: 50px;
 	background: none;
 	color: #ccc;
 	font-size: 32px;
@@ -114,7 +123,6 @@
 	letter-spacing: 3px;
 	cursor: pointer;
 	margin-left: 20px;
-	display: inline-block;
 }
 
 .sidenav .main .header:hover {
@@ -134,6 +142,7 @@
     width: 50px;
 	display: inline-block;
 	margin: 0px;
+	background-color: none;
 }
 
 .chevrons-down {

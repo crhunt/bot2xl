@@ -187,7 +187,7 @@ function display_tapes() {
     for (n = 0, len = tape_list.length, innerHTMLstr="", tape_name=""; n < len; n++) {
         tape_name = tape_list[n].replace(/_/g," ")
                                 .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
-                                .replace(/2xl/g,"2-XL").replace(/xmen/g,"X-Men")
+                                .replace(/2xl/g,"2-XL").replace(/Xmen/g,"X-Men")
                                 .replace(/\sOr\s/g," or ").replace(/\sAnd\s/g," and ")
                                 .replace(/\sTo\s/g," to ").replace(/\sOf\s/g," of ")
                                 .replace(/\sBy\s/g," by ").replace(/\sFor\s/g," for ")

@@ -105,6 +105,8 @@ body {
 
 .closeX:before {
     content: "\2715";
+    text-decoration: none;
+    font-family: "Montserrat Light";
 }
 
 .closeX:hover {
