@@ -214,10 +214,12 @@ function closePopUp(popup_id) {
     window.context.resume();
     //play_audio();
     document.getElementById(popup_id).style.transform = "scale(0)";
+    document.getElementById("popupoverlay").style.width = "0vw";
 }
 
 function openPopUp(popup_id) {
     // Pause audio
     pause_audio();
+    document.getElementById("popupoverlay").style.width = "100vw";
     document.getElementById(popup_id).style.transform = "scale(1)";
   }

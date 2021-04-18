@@ -17,6 +17,8 @@
 
 <body>
 
+<div class="popupoverlay" id="popupoverlay" onclick="closePopUp('tapeoptions')"></div>
+
 <!-- sidebar -->
 <div id="sideNav" class="sidenav">
     <div id="openSideNav" class="sidenav open" onclick="openSideNav()">
@@ -49,20 +51,13 @@
 <div id="audioTrack"></div>
 
 <!--Accessible Controls for 2xl-->
+
 <audio controls id="audioPlayer" onplay="window.context.resume()" 
        src="media_2xl/fascinating_facts/1.mpga" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 
-<!--p>
-<button type="button" onclick="playtrack('1')">Track 1</button>
-<button type="button" onclick="playtrack('2')">Track 2</button>
-<button type="button" onclick="playtrack('3')">Track 3</button>
-<button type="button" onclick="playtrack('4')">Track 4</button>
-</p-->
-<!--div id="audioLevel"></div-->
-</div>
-<!--End Accessible Controls for 2xl-->
+</div><!--End audio track-->
 <div class="buttonbox">
   <div class="ticklebutton" onclick="playtrack('1')">
     <div class="buttonlabel abc">QUESTION</div>
@@ -86,32 +81,22 @@ Your browser does not support the audio element.
   </div>
 </div>
 
+<!--End Accessible Controls for 2xl-->
+
     </div><!--end bottom bar main-->
 </div><!--end bottom bar-->
 
 <!-- bgmain sets the background-->
 <div class="bgmain" id="main" onclick="closeAllNavs()">
 
-<div class="mapimage">
+<!--div class="mapimage"-->
 <img src="style/images/bot_2xl.jpg" class="bot" />
-     <!--usemap="#bobhome" border=0 alt="bobhome" />-->
 
 <!-- 2xl buttons -->
 <div class="tapedeck" onclick="openPopUp('tapeoptions')">LOAD GAME</div>
-
 <!-- end 2xl buttons-->
 
-<!--
-<map name="bobhome">
-
-<area shape="rect" coords="0,0,200,250" alt="Exit" 
-      href="../index.php" />
-
-</map>
--->
-
 <div class="floater">
-
 <canvas id="c"></canvas>
 </div>
 
@@ -122,8 +107,7 @@ Your browser does not support the audio element.
 <!-- tape deck popup -->
 <div class="centerpopup" id="tapeoptions">
   <div class="closeX" onclick="closePopUp('tapeoptions')"></div>
-  <div class="tapecontainer" id="tapecontainer">
-  </div>
+  <div class="tapecontainer" id="tapecontainer"></div>
 </div>
 <!-- end tape deck popup -->
 
