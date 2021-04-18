@@ -3,13 +3,13 @@ window.AudioContext = window.AudioContext || window.webkitAudioContext;
 window.onload = function() {
 
     // Initialize tape and track
-    var loadtape = 'fascinating_facts';
+    var tapename = 'world_of_2xl';
 
     // Display tape collection
     display_tapes();
 
     // Initialize tape to play
-    set_tape(loadtape);
+    set_tape(tapename);
 
     // Initialize audio context
     window.context = new AudioContext();
@@ -19,12 +19,12 @@ window.onload = function() {
 
 }
 
-function set_tape(loadtape) {
+function set_tape(tapename) {
+
     // Set tape
     var tape = document.getElementById('tape');
-    tape.value = loadtape;
-    //tape.innerHTML = toUpper(loadtape.replace(/_/g," "));
-    tape.innerHTML = loadtape.replace(/_/g," ")
+    tape.value = tapename;
+    tape.innerHTML = tapename.replace(/_/g," ")
                              .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
     
     // Set track
@@ -33,17 +33,51 @@ function set_tape(loadtape) {
     currentTrack.value = loadtrack;
     currentTrack.innerHTML = "Track "+loadtrack;
 
-    // Set the audio to play from beginning
-    var audio = document.getElementById('audioPlayer');
-    audio.currentTime = 0;
+    // Get audio player
+    //var audio = document.getElementById('audioPlayer');
+    // Set audio url
+    //audio.src = "media_2xl/"+tapename+"/"+loadtrack+".mpga";
     
     // Highlight tape cover in tape display
-    tape_cover = document.getElementById(loadtape);
+    display_tapes();
+    tape_cover = document.getElementById(tapename);
     tape_cover.style.border = "4px solid rgba(255,255,255,0.8)";
 
     // Add tape name to bottom display
     document.getElementById('bottom-header-down').innerHTML = tape.innerHTML;
     document.getElementById('bottom-header-up').innerHTML = tape.innerHTML;
+
+    // Set track url and start time
+    var audio = document.getElementById('audioPlayer');
+    audio.src = "media_2xl/"+tapename+"/"+loadtrack+".mpga";
+    audio.currentTime = 0;
+
+}
+
+function load_tape(tapename) {
+
+    // Set tape to new selection
+    set_tape(tapename);
+
+    // Close pop-up
+    closePopUp('tapeoptions');
+
+}
+
+function play_audio() {
+    // Resume context
+    window.context.resume();
+    // Get audio player
+    var audio = document.getElementById('audioPlayer');
+    // Stop playback
+    audio.play();
+}
+
+function pause_audio() {
+    // Get audio player
+    var audio = document.getElementById('audioPlayer');
+    // Stop playback
+    audio.pause();
 }
 
 function playtrack(track) {
@@ -153,7 +187,8 @@ function display_tapes() {
                                 .replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
         //tape_name = toUpper(tape_name);
         innerHTMLstr += '<div class="tapebox-outer" id="'+tape_list[n]+'" >' +
-                        '<div class="tapebox-inner" id="'+tape_list[n]+'_overlay">'+
+                        '<div class="tapebox-inner" id="'+tape_list[n]+'_overlay" ' +
+                             'onclick="load_tape(\''+tape_list[n]+'\')">'+
                         '<p>'+tape_name+'</p></div></div>';
     }
     // Populate innerhtml
@@ -162,18 +197,18 @@ function display_tapes() {
     for (n = 0, len = tape_list.length; n < len; n++) {
         elem = document.getElementById(tape_list[n]);
         elem.style.background = "url('media_2xl/"+tape_list[n]+"/cover.png') no-repeat center";
+        elem.style.border = "none";
     }
     
 }
+function closePopUp(popup_id) {
+    window.context.resume();
+    play_audio();
+    document.getElementById(popup_id).style.transform = "scale(0)";
+}
 
-function toUpper(str) {
-    return str
-        .toLowerCase()
-        .split(' ')
-        .map(function(word) {
-            //console.log("First capital letter: "+word[0]);
-            //console.log("remain letters: "+ word.substr(1));
-            return word[0].toUpperCase() + word.substr(1);
-        })
-        .join(' ');
- }
+function openPopUp(popup_id) {
+    // Pause audio
+    pause_audio();
+    document.getElementById(popup_id).style.transform = "scale(1)";
+  }
