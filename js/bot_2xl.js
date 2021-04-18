@@ -62,6 +62,9 @@ function load_tape(tapename) {
     // Close pop-up
     closePopUp('tapeoptions');
 
+    // Play tape
+    play_audio();
+
 }
 
 function play_audio() {
@@ -203,7 +206,7 @@ function display_tapes() {
 }
 function closePopUp(popup_id) {
     window.context.resume();
-    play_audio();
+    //play_audio();
     document.getElementById(popup_id).style.transform = "scale(0)";
 }
 
