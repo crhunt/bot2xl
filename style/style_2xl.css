@@ -46,6 +46,41 @@ body {
     color: #fff;
 }
 
+.obutton {
+    background-color: none;
+    cursor: pointer;
+    height: 5.5vh;
+    width: 3.5vw;
+}
+
+.obutton:hover {
+    background: rgba(253, 190, 17, 0.5);
+}
+
+.onebutton {
+    position: absolute;
+    top: 82vh;
+    left: 35vw;
+}
+
+.twobutton {
+    position: absolute;
+    top: 82vh;
+    left: 43.5vw;
+}
+
+.threebutton {
+    position: absolute;
+    top: 82vh;
+    left: 52vw;
+}
+
+.fourbutton {
+    position: absolute;
+    top: 82vh;
+    left: 60.5vw;
+}
+
 .floater {
     position: absolute;
     top: 10vh;
